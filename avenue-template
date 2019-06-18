@@ -1,0 +1,277 @@
+Notes
++ Adding Custom CSS to Home > Design > Custom CSS 
++ Adding !important to after, if CSS doesn’t work! for example: font-size: 20px !important; 
++ If it still doesn’t work, Just comment below or Send me (fb.com/khunglong1101) a message with your site url. I’ll give you exact CSS. 
++ All CSS is created based on the demo at:  https://avenue-demo.squarespace.com/  so some CSS might not be right for your site
+
+A. HEADER
+1.Hide Site Title on Mobile
+@media screen and (max-width:767px) {
+#logo {
+    display: none;
+}
+}
+2.Hide Site Tagline (Only Mobile)
+@media screen and (max-width:767px) {
+.logo-subtitle {
+   display: none;
+}
+}
+3.Reduce mobile header padding
+@media screen and (max-width:767px) {
+/* Menu - Logo Site Title Padding */
+#mobileMenuLink {
+    margin-bottom: 5px;
+}
+/* Logo Site Title Content Padding */
+#header {
+    margin-bottom: 0;
+}
+}
+4.Disable Responsive Top Menu
+@media screen and (max-width:767px) {
+div#mobileMenuLink {
+    display: none;
+}
+div#mobileNav {
+    height: auto;
+}
+#mobileNav ul {
+    display: flex;
+    justify-content: center;
+}
+div#mobileNavWrapper {
+    border: none !important;
+}
+}
+5. Reduce space between Header/Nav and Content on pages
+section#page {
+    padding-top: 0;
+}
+6. Logo above Navigation
+#logo, #topNav {
+    width: 100%;
+    text-align: center;
+}
+#topNav nav {
+    float: none;
+    display: inline-block;
+}
+#topNav ul {
+    float: none;
+    display: inline-block;
+}
+7. Hide Header on Mobile
+@media screen and (max-width:767px) {
+/* Hide Logo */
+#header {
+    display: none;
+}
+/* Hide Menu */
+div#mobileMenuLink {
+    display: none;
+}
+/* Hide Logo and Menu */
+#mobileMenuLink, #header {
+    display: none;
+}
+}
+8. Sticky Header (Desktop & Tablet)
+@media screen and (min-width:768px) {
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 40px 100px;
+    z-index: 10;
+}
+}
+9. Sticky Header (Mobile)
+@media screen and (max-width:767px) {
+div#mobileMenuLink {
+    position: fixed;
+    top: 0;
+    left: 45%;
+    z-index: 10;
+}
+div#mobileNav {
+    margin-top: 20px;
+    position: fixed;
+    z-index: 10;
+    left: 45%;
+}
+header#header {
+    position: fixed;
+    left: 45%;
+    margin-top: 30px;
+    z-index: 10;
+}
+section#page {
+    margin-top: 30px;
+}
+}
+10. Change Header Background Color
+#canvas {
+    max-width: 100% !important;
+}
+#header {
+    margin: -85px -75px;
+    padding: 10px 75px !important;
+    background: gray;
+}
+11. Move navigation above logo
+header#header {
+    display: flex;
+    flex-direction: column-reverse;
+}
+#topNav nav {
+    width: 100%;
+}
+#topNav ul {
+    display: inline-block;
+}
+B. FOOTER
+1.Footer Background Color & Footer Full-width
+/* Footer Full width and background color */
+#canvas {
+    max-width: 100%;
+    position: relative;
+}
+#footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 60px;
+    background: gray;
+}
+section#page {
+    margin-bottom: 150px;
+}
+/* Footer Text Color */
+#footer {
+    color: white;
+}
+/* Footer Link Color */
+#footer a {
+    color: white;
+}
+C. HOME PAGE
+1.Remove the hover effect on the home page
+#projectThumbs .project:hover .project-image .intrinsic {
+    opacity: 1 !important;
+}
+2.Change Hover Color
+#projectThumbs .project:hover .project-image {
+    background: red !important;
+}
+#projectThumbs .project:hover .project-image .intrinsic {
+    opacity: 0;
+}
+3.How to add background image for home page only
+First, you need to know Home Page ID. Then use this css
+#collection-56d4a580e707eb7a02e4308b is Home Page ID
+background-repeat includes: no-repeat, repeat-x, repeat-y
+Background-size includes: cover, contain, auto
+body#collection-56d4a580e707eb7a02e4308b {
+    background-image: url(https://static1.squarespace.com/static/56d4a12…/t/56d4a71…/1456776984496/1.jpg?format=500w);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 10%;
+}
+4. Project titles always on top of project thumbnails
+#projectThumbs .project>div {
+    display: flex;
+    flex-direction: column-reverse;
+}
+#projectThumbs .project-title {
+    margin-bottom: 10px;
+}
+D. GALLERY (Single Page)
+1.Make the P and N capitalized in Prev/Next
+div#projectNav {
+    text-transform: capitalize;
+}
+2.Full-width image in Gallery Page
+#projectPages .project-meta {
+    margin-right: 0 !important;
+    width: 100% !important;
+    float: none !important;
+}
+#projectPages .project.active-project {
+    margin-right: 0 !important;
+}
+3.Remove Site Title from Photo Gallery Page (Single Page)
+.homepage #logo {
+    display: none;
+}
+.homepage.view-list #logo {
+    display: block;
+}
+4.Make Gallery Description Sticky
+.project-meta {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 10px;
+}
+5.Remove “Back To…” link from Gallery Pages
+.project-controls a {
+    display: none;
+}
+E. BLOG PAGE - BLOG POSTS
+1. Hide the Sidebar on Blog Posts but NOT on the Blog Page?
+.view-item #sidebar {
+    display: none;
+}
+2. Change the width of blog post
+@media screen and (min-width:992px) {
+/* Change blog posts width on Desktop */
+.view-item .article-wrapper {
+    margin-right: 300px !important;
+}
+}
+If you want to change width on Tablet. I think you should hide Sidebar 🙂
+3.Move blog post title to top
+.view-item article {
+    display: flex;
+    flex-direction: column;
+}
+.view-item article header {
+    order: 1;
+}
+.view-item article .special-content {
+    order: 2;
+}
+.view-item article .entry-content {
+    order: 3;
+}
+.view-item article footer {
+    order: 4;
+}
+4. Remove Blog Dates
+.view-item .meta {
+    display: none;
+}
+
+F. OTHER
+1. Remove Heading from all Pages
+/* Remove Heading - Gallery Page */
+#projectPages .project-title {
+    display: none;
+}
+/* Remove Heading - Pages */
+.sqs-block-content h1 {
+    display: none;
+}
+2.Change the background image for each page
+First, you need to know Page ID. Then use this css
++ #collection-56d4a580e707eb7a02e4308b is Page ID
++ background-repeat includes: no-repeat, repeat-x, repeat-y
++ Background-size includes: cover, contain, auto
+body#collection-56d4a580e707eb7a02e4308b {
+    background-image: url(https://static1.squarespace.com/static/56d4a12…/t/56d4a71…/1456776984496/1.jpg?format=500w);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 10%;
+}
